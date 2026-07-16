@@ -1,0 +1,124 @@
+*{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+}
+body{
+  background-color: #f1f1f1;
+  color: #393939c1;
+}
+.navbar{
+  background-color: #ffffffed;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.navbar h2{
+  color: #80b9ff;
+  padding: 5px;
+}
+.txt h2{
+  text-align: center;
+}
+.container{
+  border: 1px solid #ccc;
+  padding: 25px;
+  width: 100%;
+  max-width: 380px;
+  height: fit-content;
+  box-sizing: border-box;
+  align-content: center;
+  margin: auto;
+  border-radius: 8px;
+  background-color: #ffffffed;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin-top: 40px;
+  /* align-items: center; */
+}
+.gaps input{
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: black;
+  outline: none;
+  width: 300px;
+  background: transparent;
+  /* background-color: rgba(167, 222, 244, 0.058); */
+  transition: 0.3s ease;
+}
+.gaps input::placeholder{
+  color: #858585ce;
+  padding-left: 5px;
+}
+.gaps label{
+  display: block;
+  font-size: 0.9rem;
+  padding: 5px;
+}
+.gaps input:hover{
+  transform: scale(1.05);
+  border-radius: 1px solid #858585ce;
+}
+.gap-check{
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+.gap-check input{
+  cursor: pointer;
+}
+
+.gap-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.gaps button{
+  padding: 8px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(100, 200, 300);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.gaps button:hover{
+  transform: scale(1.05);
+}
+.gap-alt{
+  text-align: center;
+  font-size: 0.9rem;
+}
+.gap-alt a{
+  text-decoration: none;
+  color: #0072fe;
+}
+.text a{
+  text-decoration: none;
+  color: #0072fe;
+}
+@media screen and (max-width: 400px){
+  .container{
+    width: 90%;
+  }
+  .gaps input{
+    width: 100%;
+  }
+  .gaps button{
+    width: 100%;
+  }
+}
+.start p{
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+@view-transition {
+  navigation: auto;
+}
+
+
+
+
