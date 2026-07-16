@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login — Library Management System</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1><center>LIBRARY MANAGEMENT SYSTEM</center></h1>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Log In</h2>
+    <p class="subtitle">Welcome back. Enter your details to continue.</p>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="username">Username or User ID</label>
+        <input type="text" id="username" name="username" required autocomplete="username">
+        <span class="hint" id="usernameHint"></span>
+      </div>
+
+      <div class="field">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required autocomplete="current-password">
+        <span class="hint" id="passwordHint"></span>
+      </div>
+
+      <div class="row-check">
+        <label><input type="checkbox" id="remember"> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <button type="submit" class="submit">Log In</button>
+    </form>
+
+    <p class="switch">Don't have an account? <a href="signup.html">Sign Up</a></p>
+  </div>
+</main>
+
+<footer>&copy; 2026 Library Management System</footer>
+
+<script>
+document.getElementById('loginForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+  let valid = true;
+
+  const username = document.getElementById('username');
+  const password = document.getElementById('password');
+  const usernameHint = document.getElementById('usernameHint');
+  const passwordHint = document.getElementById('passwordHint');
+
+  usernameHint.textContent = '';
+  passwordHint.textContent = '';
+
+  if (!username.value.trim()) {
+    usernameHint.textContent = 'Username is required.';
+    valid = false;
+  }
+  if (!password.value.trim()) {
+    passwordHint.textContent = 'Password is required.';
+    valid = false;
+  }
+
+  if (valid) {
+    // Hook this up to your auth backend (Supabase / FastAPI endpoint).
+    alert('Login submitted (wire this up to your backend).');
+  }
+});
+</script>
+
+</body>
+</html>
