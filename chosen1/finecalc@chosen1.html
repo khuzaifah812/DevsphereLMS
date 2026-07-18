@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       body{
+           background-color: rgb(240, 240,720);
+            opacity:0;
+            animation: fadeIn 0.5s forwards;
+            animation-delay: 0.3s;
+       }
+        @keyframes fadeIn{
+            to{
+                opacity:1;
+            }
+        }
+        .container{
+           display: flex;
+            flex-direction:column;
+            align-items:center;
+            width: 50%;
+            margin:auto;
+            margin-top: 50px;
+            gap: 8px;
+            background-color:aliceblue;
+            box-shadow: 0 4px 6px #ccc;
+         }
+        .container input{
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            outline: none; 
+            background-color: transparent;
+        }
+        .container input:hover{
+            border-color: rgb(100, 200, 300);
+            transform: scale(1.05);
+         }
+        label{
+            font-size: 15px;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 0;
+         } 
+        #button{
+            margin: 10px;
+            padding: 15px;
+            margin-top: 0;
+            border-radius: 5px;
+            border: none;
+            cursor:pointer;
+            font-weight: bolder;background-color: rgb(100, 200, 300);
+            font-size: 15px;
+            font-size: 1.1em;
+         }
+         #button:hover{
+            background-color: rgb(0, 200, 300);
+            transform: scale(1.08);
+            transition: all 0.3s ease-in-out;
+         }
+          h1{
+            text-align: center;
+            margin-top: 20px;
+            color: rgb(0, 190, 200);
+        } 
+        .container h1{
+            text-align: center;
+            margin-top: 20px;
+            color: rgb(0, 190, 200);
+            font-size: 34px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }  
+        .container #result{
+            font-size: 15px;
+            text-align: left;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            display: flex;
+            flex-direction:column;
+            font-size: 20px;
+            font-style: italic;
+            /* padding-left: 0px; */
+            margin-bottom: 5px; 
+            border: groove rgb(0, 190, 200);
+            background-color: rgb(100,150,180);
+        }
+        span{
+            padding: 4px;
+            padding-right: 100px;
+        }
+         #footer p{
+            text-align: center;
+            color: rgb(0, 190, 200);
+            padding: 8px;
+        }     
+    </style>
+</head>
+<body>
+    <h1>Library Management System</h1>
+    <form action="" method="">
+    <div class="container">
+        <h1>Fine Calculator</h1>
+        <label for="booktitle">Book Title:</label>
+        <input type="text" id="booktitle" name="booktitle">
+        <label for="borrow-date">Borrow Date:</label>
+        <input type="date" id="borrow-date" name="borrow date">
+        <label for="return-date">Return Date:</label>
+        <input type="date" id="return-date" name="return date">
+        <P>Daily Fine Amount: UGX: 2,000</p>
+        <input id="button" type="submit" value="Calculate Fine">
+    <div id="result">
+        <span>Due Days: 0</span>
+        <span>Fine Amount: UGX: 0</span>
+    </div>
+    </div>
+   
+    </form>
+    <footer id="footer" >
+        <p>&copy; 2026 DEVSPHERE All Rights Reserved</p>
+     </footer>
+</body>
+</html>
