@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+         body{
+            background-color: rgb(240, 240,720);
+            opacity:0;
+            animation: fadeIn 0.5s forwards;
+            animation-delay: 0.3s;
+        }
+         @keyframes fadeIn{
+            to{
+                opacity:1;
+            }
+        }
+        .container{
+            display: flex;
+            flex-direction:column;
+            align-items:center;
+            width: 80%;
+            margin:auto;
+            margin-top: 10px;
+            background-color:aliceblue;
+            box-shadow: 0 4px 6px #ccc;
+        }
+        .search-bar{
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:10px;
+}
+        hr{
+            margin: 10px 0;
+            width: 80%;
+            border: 1px solid #ccc;
+        }
+        .container input{
+            width: 220px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            outline: none; 
+            background-color: transparent;
+         }
+        .container input:hover{
+            border-color: rgb(100, 200, 300);
+            transform: scale(1.02);
+         }
+        h1{
+            text-align: center;
+            margin-top: 20px;
+            color: rgb(0, 190, 200);
+        } 
+        .container h1{
+            text-align: center;
+            margin-top: 20px;
+            color: rgb(0, 190, 200);
+            font-size: 34px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        } 
+        h2{
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: 10px;
+            color: rgb(25, 156, 163);
+            font-size: 24px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        ul{
+            margin-top: 5px;
+            margin-bottom: 0;
+            list-style-type: none;
+            color: rgb(130, 200, 255);
+        }
+        button{
+            border: none;
+            background-color: transparent;
+         }
+         button:hover{
+            background-color: rgb(100, 200, 300);
+            transform: scale(1.4);
+            border: solid 1px black;
+            border-radius: 5px;
+         }
+         p{
+            color: rgb(10, 200, 255);
+            margin-top: 5px;
+            margin-bottom: 0;
+         }
+         ul li #ch{
+            color: rgb(0, 200, 0);
+         }
+            ul li #ex{
+                color: rgb(200, 0, 0);
+                
+            }
+             #footer p{
+            text-align: center;
+            color: rgb(0, 190, 200);
+            padding: 8px;
+        }
+        @media (max-width:768px){
+
+    .container{
+        width:95%;
+        padding:20px;
+    }
+
+    .container h1{
+        font-size:28px;
+    }
+
+    h2{
+        font-size:20px;
+    }
+
+    .search-bar{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+        width:100%;
+    }
+
+    .container input{
+        width:90%;
+    }
+
+    button{
+        width:90%;
+        padding:10px;
+        background:#64c8ff;
+        border-radius:5px;
+    }
+
+    ul{
+        padding-left:0;
+        text-align:center;
+    }
+
+    hr{
+        width:95%;
+    }
+
+}
+    </style>
+</head>
+<body>
+    <h1>Library Management System</h1>
+    <form action="/search" method="get">
+       <div class="container">
+        <h1>Library Book Search</h1>
+        <hr>
+        <div class="search-bar">
+        <label for="title">Search Books:</label>
+        <input type="text" id="title" name="title" required placeholder="Search by title, author, or category..."
+        >
+       <button type="submit"> <i class="fa-solid fa-magnifying-glass"></i></button>
+       </div>
+       <hr>
+       <h2>Search Results</h2>
+       <hr>
+       <p>Book Cover: 
+        
+        <ul>
+            <li>Book Title: <i>Python Programming</i></li>
+            <li>Book Author: <i>John Doe</i></li>
+            <li>Book Category: <i>Programming</i></li>
+            <li>Status: <i id="ch" class="fa-solid fa-check"></i> Available</li>
+        </ul>
+         
+       </p>
+       <hr>
+       <p>Book Cover: 
+        
+        <ul>
+            <li>Book Title: <i>C Programming</i></li>
+            <li>Book Author: <i>Jane Smith</i></li>
+            <li>Book Category: <i>Programming</i></li>
+            <li>Status: <i id="ex" class="fa-solid fa-times"></i> Borrowed</li>
+        </ul>
+         
+       </p>
+       <hr>
+       </div>
+        <footer id="footer">
+        <p>&copy; 2026 DEVSHERE All Rights Reserved</p>
+    </footer> 
+</body>
+</html>
