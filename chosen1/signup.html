@@ -130,6 +130,7 @@
         confirmPassword.addEventListener('input', validatePasswords);
 
         form.addEventListener('submit', function (event) {
+            event.preventDefault();
             if (!validatePasswords()) {
                 event.preventDefault();
                 confirmPassword.focus();
