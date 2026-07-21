@@ -150,6 +150,7 @@
 
 }
     </style>
+    
 </head>
 <body>
     <h1>Library Management System</h1>
@@ -166,31 +167,57 @@
        <hr>
        <h2>Search Results</h2>
        <hr>
-       <p>Book Cover: 
-        
-        <ul>
-            <li>Book Title: <i>Python Programming</i></li>
-            <li>Book Author: <i>John Doe</i></li>
-            <li>Book Category: <i>Programming</i></li>
-            <li>Status: <i id="ch" class="fa-solid fa-check"></i> Available</li>
-        </ul>
-         
-       </p>
-       <hr>
-       <p>Book Cover: 
-        
-        <ul>
-            <li>Book Title: <i>C Programming</i></li>
-            <li>Book Author: <i>Jane Smith</i></li>
-            <li>Book Category: <i>Programming</i></li>
-            <li>Status: <i id="ex" class="fa-solid fa-times"></i> Borrowed</li>
-        </ul>
-         
-       </p>
+      <div class="book">
+<p>Book Cover:</p>
+
+<ul>
+    <li>Book Title: <i>Python Programming</i></li>
+    <li>Book Author: <i>John Doe</i></li>
+    <li>Book Category: <i>Programming</i></li>
+    <li>Status: <i id="ch" class="fa-solid fa-check"></i> Available</li>
+</ul>
+
+<hr>
+</div>
+      <div class="book">
+<p>Book Cover:</p>
+
+<ul>
+    <li>Book Title: <i>C Programming</i></li>
+    <li>Book Author: <i>Jane Smith</i></li>
+    <li>Book Category: <i>Programming</i></li>
+    <li>Status: <i id="ex" class="fa-solid fa-times"></i> Borrowed</li>
+</ul>
+
+<hr>
+</div>
+
        <hr>
        </div>
         <footer id="footer">
         <p>&copy; 2026 DEVSHERE All Rights Reserved</p>
     </footer> 
+    <script>
+        const searchForm = document.querySelector('form');
+        const searchInput = document.getElementById('title');
+        const books = document.querySelectorAll('.book');
+
+        function filterBooks(query) {
+            const normalized = query.trim().toLowerCase();
+            books.forEach(book => {
+                const text = book.textContent.toLowerCase();
+                book.style.display = normalized === '' || text.includes(normalized) ? '' : 'none';
+            });
+        }
+
+        searchForm.addEventListener('submit', event => {
+            event.preventDefault();
+            filterBooks(searchInput.value);
+        });
+
+        searchInput.addEventListener('input', () => {
+            filterBooks(searchInput.value);
+        });
+    </script>
 </body>
 </html>

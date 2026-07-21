@@ -127,17 +127,22 @@
             }
         }
     </style>
+  
 </head>
 <body>
     
     <h1>Library Management System</h1>    
-       <form action="" method="" >
+       <form action="/login" method="post">
         <div class="container">
           <h1>Login</h1>
           <label for="user">UserName or Email:</label>
           <input type="text" id="user" value="" name="usernameoremail" placeholder="Enter UserName or Email" required>
           <label for="password">Password:</label>
           <input type="password" id="password" value="" name="password" placeholder="Enter 8 Characters" minlength="8" maxlength="8" required >
+          <label class="show-password">
+            <input type="checkbox" id="showPassword">
+            Show Password
+          </label>
           <div class="options">
           <label class="remember">
           <input type="checkbox" name="remember">
@@ -150,8 +155,42 @@
           <p>Dont have an account? <a href="signup.html">SignUp </a></p>
           </div>
         </form>
-    <footer id="footer">
+
+          <footer id="footer">
         <p>&copy; 2026 DEVSHERE All Rights Reserved</p>
-    </footer>    
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.querySelector('form');
+            const userInput = document.getElementById('user');
+            const passwordInput = document.getElementById('password');
+            const rememberCheckbox = document.querySelector('input[name="remember"]');
+            const showPassword = document.getElementById('showPassword');
+
+            const savedUsername = localStorage.getItem('savedUsername');
+            const savedRemember = localStorage.getItem('savedRemember');
+
+            if (savedRemember === 'true' && savedUsername) {
+                userInput.value = savedUsername;
+                rememberCheckbox.checked = true;
+            }
+
+            showPassword.addEventListener('change', () => {
+                passwordInput.type = showPassword.checked ? 'text' : 'password';
+            });
+
+            form.addEventListener('submit', () => {
+                if (rememberCheckbox.checked) {
+                    localStorage.setItem('savedUsername', userInput.value);
+                    localStorage.setItem('savedRemember', 'true');
+                } else {
+                    localStorage.removeItem('savedUsername');
+                    localStorage.setItem('savedRemember', 'false');
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>

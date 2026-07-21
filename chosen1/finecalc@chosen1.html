@@ -97,10 +97,11 @@
             padding: 8px;
         }     
     </style>
+
 </head>
 <body>
     <h1>Library Management System</h1>
-    <form action="" method="">
+    <form action="/CalculateFine" method="POST">
     <div class="container">
         <h1>Fine Calculator</h1>
         <label for="booktitle">Book Title:</label>
@@ -112,7 +113,7 @@
         <P>Daily Fine Amount: UGX: 2,000</p>
         <input id="button" type="submit" value="Calculate Fine">
     <div id="result">
-        <span>Due Days: 0</span>
+        <span>Late Days: 0</span>
         <span>Fine Amount: UGX: 0</span>
     </div>
     </div>
@@ -121,5 +122,37 @@
     <footer id="footer" >
         <p>&copy; 2026 DEVSPHERE All Rights Reserved</p>
      </footer>
+  
+    
+       <script > 
+        const form = document.querySelector('form');
+        const resultDiv = document.getElementById('result');
+        const lateDaysSpan = resultDiv.querySelector('span:nth-child(1)');
+        const fineAmountSpan = resultDiv.querySelector('span:nth-child(2)');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const borrowDate = new Date(document.getElementById('borrow-date').value);
+            const returnDate = new Date(document.getElementById('return-date').value);
+            const dailyFineAmount = 2000; // Daily fine amount in UGX
+
+            if (returnDate < borrowDate) {
+                alert("Return date cannot be earlier than borrow date.");
+                return;
+            }
+            const totalDays = Math.ceil(
+                (returnDate - borrowDate) / (1000 * 60 * 60 * 24)
+            );
+
+            const lateDays = Math.max(0, totalDays - 7);
+
+            const fineAmount = lateDays * dailyFineAmount;
+
+            lateDaysSpan.textContent = `Late Days: ${lateDays}`;
+            fineAmountSpan.textContent = `Fine Amount: UGX: ${fineAmount}`;
+        });
+    </script>
+   
 </body>
 </html>

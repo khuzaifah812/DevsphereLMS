@@ -6,48 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup</title>
     <style>
-        /* body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            text-align: center;
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-top: 10px;
-        }
-        .input {
-            padding: 8px;
-            margin-top: 5px;
-            border-radius: 3px;
-            border: 1px solid #ccc;
-        }
-        button {
-            margin-top: 15px;
-            padding: 10px;
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #0056b3;
-        } */
         body{
             background-color: rgb(240, 240,720);
             opacity:0;
@@ -122,6 +80,7 @@
             }
         }
     </style>
+    
 </head>
 <body>
     <h1>Library Management System</h1>  
@@ -141,8 +100,8 @@
             <input type="password" id="password" name="password" maxlength="8" placeholder="8 characters" required>
 
             <label for="cpassword">Confirm Password:</label>
-            <input type="password" id="cpassword" name="password" maxlength="8" placeholder="8 characters" required>
-            
+            <input type="password" id="cpassword" name="cpassword" maxlength="8" placeholder="8 characters" required>
+            <div id="formMessage" style="color: red; font-size: 14px; margin-bottom: 8px;"></div>
             <button type="submit">Sign Up</button>
 
              <p>Already have an account? <a href="login.html">Login </a></p>
@@ -151,5 +110,32 @@
     <footer id="footer" >
         <p>&copy; 2026 DEVSPHERE All Rights Reserved</p>
     </footer>
+
+    <script>
+        const form = document.querySelector('form');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('cpassword');
+        const message = document.getElementById('formMessage');
+
+        function validatePasswords() {
+            if (password.value && confirmPassword.value && password.value !== confirmPassword.value) {
+                message.textContent = 'Passwords do not match.';
+                return false;
+            }
+            message.textContent = '';
+            return true;
+        }
+
+        password.addEventListener('input', validatePasswords);
+        confirmPassword.addEventListener('input', validatePasswords);
+
+        form.addEventListener('submit', function (event) {
+            if (!validatePasswords()) {
+                event.preventDefault();
+                confirmPassword.focus();
+            }
+        });
+    </script>
+
 </body>
 </html>
