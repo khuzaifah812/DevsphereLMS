@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow Books</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- <div class="topbar">
+    <input type="text" placeholder="Search books, members..." class="search-bar">
+
+    <div class="icons">
+        <i class="fas fa-bell"></i>
+    </div>
+</div> -->
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <h2>📚 Library System</h2>
+
+        
+            <ul>
+    <li><a href="#"><i class="fas fa-chart-line"></i> Dashboard</a></li>
+    <li><a href="#"><i class="fas fa-book"></i> Books</a></li>
+    <li><a href="#"><i class="fas fa-users"></i> Members</a></li>
+    <li><a href="#"><i class="fas fa-hand-holding"></i> Borrow Books</a></li>
+    <li><a href="#"><i class="fas fa-undo"></i> Returns</a></li>
+    <li><a href="#"><i class="fas fa-file-alt"></i> Reports</a></li>
+    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+</ul>
+        
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+
+        <h1>Borrow Books</h1>
+
+        <!-- Member Section -->
+        <div class="card">
+            <h3>Select Member</h3>
+
+            <div class="row">
+                <input type="text" placeholder="Member ID">
+                <button>Search</button>
+            </div>
+
+            <div class="row">
+                <input type="text" placeholder="Member Name">
+                <input type="email" placeholder="Email">
+                <input type="text" placeholder="Phone">
+            </div>
+        </div>
+
+        <!-- Book Section -->
+        <div class="card">
+            <h3>Select Book</h3>
+
+            <div class="row">
+                <input type="text" placeholder="Book ID">
+                <button>Search</button>
+            </div>
+
+            <div class="row">
+                <input type="text" placeholder="Book Title">
+                <input type="text" placeholder="Author">
+                <input type="number" placeholder="Available Copies">
+            </div>
+
+            <div class="row">
+                <input type="date">
+                <input type="date">
+                <button class="issue-btn">Issue Book</button>
+            </div>
+        </div>
+
+        <!-- Borrowed Books Table -->
+        <div class="card">
+            <h3>Member Borrowed Books</h3>
+
+            <table>
+                <tr>
+                    <th>Book ID</th>
+                    <th>Title</th>
+                    <th>Borrow Date</th>
+                    <th>Due Date</th>
+                    <th>Status</th>
+                </tr>
+
+                <tr>
+                    <td>BK001</td>
+                    <td>Python Basics</td>
+                    <td>10/07/2026</td>
+                    <td>24/07/2026</td>
+                    <td>Borrowed</td>
+                </tr>
+
+                <tr>
+                    <td>BK002</td>
+                    <td>HTML & CSS</td>
+                    <td>12/07/2026</td>
+                    <td>26/07/2026</td>
+                    <td>Borrowed</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
