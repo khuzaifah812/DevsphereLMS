@@ -166,6 +166,10 @@
        </div>
        <hr>
        <h2>Search Results</h2>
+       <p id="no-results" style="display:none; color:red; text-align:center; font-weight:bold;">
+    <i class="fa-solid fa-circle-exclamation"></i>
+    No books match your search.
+</p>
        <hr>
       <div class="book">
 <p>Book Cover:</p>
@@ -202,12 +206,28 @@
         const searchInput = document.getElementById('title');
         const books = document.querySelectorAll('.book');
 
+       const noResults = document.getElementById('no-results');
+
         function filterBooks(query) {
             const normalized = query.trim().toLowerCase();
+            let found = false;
+
             books.forEach(book => {
                 const text = book.textContent.toLowerCase();
-                book.style.display = normalized === '' || text.includes(normalized) ? '' : 'none';
+
+                if (normalized === '' || text.includes(normalized)) {
+                    book.style.display = '';
+                    found = true;
+                } else {
+                    book.style.display = 'none';
+                }
             });
+
+            if (found) {
+                noResults.style.display = 'none';
+            } else {
+                noResults.style.display = 'block';
+            }
         }
 
         searchForm.addEventListener('submit', event => {
