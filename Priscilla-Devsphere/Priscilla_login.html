@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+
+
+body {
+    min-height: 100vh;
+    background-color: #eef5ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+footer{
+      width: 100%;
+      text-align: center;
+      padding: 18px 0;
+      background: #f2f2f2;;
+      color: #666;
+      margin-top: 14px;
+      font-size: 14px;
+}
+
+.container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo_container {
+display: flex;
+justify-content: center;
+object-fit: 15px;
+}
+
+.logo_container img {
+width: 150px;
+height: 150px;
+object-fit: contain;
+}
+
+
+.container h3 {
+    color: #2563eb;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.container p {
+    color: #555;
+    font-size: 16px;
+}
+
+
+.section-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.card{
+    background: white;
+    width: 450px;
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+
+
+.card h2 {
+    text-align: center;
+    color: black;
+    font-size: 25px;
+    margin-bottom: 25px;
+}
+
+
+
+
+.input {
+    margin-bottom: 15px;
+}
+
+
+.input label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.input input {
+    width: 100%;
+    padding: 12px;
+    margin-top: 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+.input input:hover{
+     transform: scale(1.05);
+}
+
+
+.input input:focus {
+    border-color: #1b4d89;
+    box-shadow: 0 0 5px rgba(27,77,137,0.3);
+}
+
+
+
+
+.password-notice {
+    color: #777;
+    font-size: 13px;
+}
+
+
+
+.login-ops {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+
+.remember-me input {
+    width: 16px;
+    height: 16px;
+}
+
+
+.Forgot-password a {
+    color: #1b4d89;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+
+
+button {
+    width: 100%;
+    padding: 13px;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+
+button:hover {
+    background: blue;
+}
+
+.signup-link{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    font-size: 16px;
+
+}
+
+.signup-link a {
+    color: #4f7cff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signup-link a:hover{
+     text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+   <div class="container">
+<div class="logo_container">
+<img src="/images/Devsphere.jpeg" alt="LMS_Logo" width="150">
+</div>
+<h1> 📚</h1>
+  <h2>Welcome back!</h2>
+     <p>Login into  Account</p>
+<h3>Library Management System</h3>
+</div> 
+<div class="section-1"> 
+       <form class="card">
+<div class="input">
+<label>Username or Email</label> 
+<input type="email" placeholder="Enter your username or email" required> 
+</div>
+<div class="input">
+<label>Password</label>
+<input type="password" placeholder="Enter your password" required> 
+</div>
+<div class="login-ops">
+<div class="remember-me">
+<input type="checkbox">
+<label>Remember me</label> <br><br>
+</div>
+<div class="Forgot-password">
+<a href="#">Forgot Password?</a>
+</div>
+</div>
+ <br><br>
+<button type="submit">Login</button> <br><br>
+<div class="login-link">
+           Don't have an account?
+<a href="signup.html"> Sign Up</a>
+
+</div>
+       <footer>
+               <p>&copy; 2026 Devsphere. All Rights Reserved.</p>
+</footer>
+</form>
+
+</div>
+</body>
+</html>
