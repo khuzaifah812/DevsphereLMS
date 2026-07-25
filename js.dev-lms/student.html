@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="student.css">
+</head>
+<body>
+  <div class="sidebar">
+    <div class="logo-container">
+      <div class="logo-img">
+        <img src="logos.png" alt="">
+      </div>
+      <div class="logo-brand">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Library Management System</span>
+      </div>
+    </div>
+
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-chart-pie"></i> Dashboard
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="book.html" class="nav-link">
+          <i class="fa-solid fa-book"></i> Book Management
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-tags"></i> Library Management
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link active">
+          <i class="fa-solid fa-user-graduate"></i> Student Management
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-hand-holding-hand"></i> Borrow Book
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-rotate-left"></i> Return Book
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-chart-line"></i> Reports
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a href="#" class="nav-link">
+          <i class="fa-solid fa-gear"></i> Settings
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <main class="main-content">
+    <div class="header-action">
+      <h1 class="page-title">Student Management</h1>
+      <button class="btn-add">
+        <i class="fa-solid fa-plus"></i> Add Student
+      </button>
+    </div>
+
+    <div class="card">
+      <input type="text" class="search-box" placeholder="Search students...">
+    </div>
+
+  <div class="table-card">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Full Name</th>
+          <th>Cohort / Year</th>
+          <th>Email</th>
+          <th>Books Borrowed</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>STU001</td>
+          <td>Ssentongo Jordan</td>
+          <td>2025/2026</td>
+          <td>admin@gmail.com</td>
+          <td>5</td>
+          <td><span class="badge badge-active">Active</span></td>
+          <td>
+              <button class="action-btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+              <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>STU002</td>
+          <td>Nabagesera Aidah</td>
+          <td>2025/2026</td>
+          <td>aidah@gmail.com</td>
+          <td>2</td>
+          <td><span class="badge badge-active">Active</span></td>
+          <td>
+              <button class="action-btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+              <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>STU003</td>
+          <td>Namiiro Milly Priscilla</td>
+          <td>2025/2026</td>
+          <td>admin2@gmail.com</td>
+          <td>0</td>
+          <td><span class="badge badge-active">Active</span></td>
+          <td>
+              <button class="action-btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+              <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>STU004</td>
+          <td>Mark Mukasa</td>
+          <td>2025/2026</td>
+          <td>admin4@gmail.com</td>
+          <td>0</td>
+          <td><span class="badge badge-inactive">Inactive</span></td>
+          <td>
+              <button class="action-btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+              <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+
+        <tr>
+          <td>STU005</td>
+          <td>Aine Mbabazi Khuzaifah</td>
+          <td>2025/2026</td>
+          <td>admin5@gmail.com</td>
+          <td>2</td>
+          <td><span class="badge badge-inactive">Inactive</span></td>
+          <td>
+              <button class="action-btn btn-edit"><i class="fa-solid fa-pen"></i></button>
+              <button class="action-btn btn-delete"><i class="fa-solid fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </main>
+</body>
+</html>

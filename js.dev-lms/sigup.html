@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up | Library Management System</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: #F4F6F8;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .header {
+      padding: 24px 20px;
+      background-color: #ffffff;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .header h3 {
+      text-align: center;
+      color: #2B2D42;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .main-wrapper {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 900px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      background-color: #ffffff;
+    }
+
+    /* Left Image Section */
+    .imgs {
+      position: relative;
+      width: 100%;
+      min-height: 250px;
+    }
+
+    .imgs img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .imgs::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0, 0, 0, 0.85) 10%, rgba(0, 0, 0, 0.2));
+      z-index: 1;
+    }
+
+    .content {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      right: 25px;
+      color: #ffffff;
+      z-index: 2;
+    }
+
+    .content h3 {
+      font-size: 1.75rem;
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .content p {
+      font-size: 0.9rem;
+      line-height: 1.4;
+      opacity: 0.9;
+    }
+
+    .elements {
+      padding: 30px 24px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+    }
+
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .inputs label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #2B2D42;
+    }
+
+    .inputs input {
+      padding: 12px 14px;
+      width: 100%;
+      background: #F8FAFC;
+      outline: none;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      transition: border-color 0.2s;
+    }
+
+    .inputs input:focus {
+      border-color: #334155;
+      background: #ffffff;
+    }
+
+    .box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+
+    .remember-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .remember-group input[type="checkbox"] {
+      cursor: pointer;
+      width: 16px;
+      height: 16px;
+      accent-color: #334155;
+    }
+
+    .remember-group label {
+      color: #475569;
+      cursor: pointer;
+    }
+
+    .remember-group a {
+      text-decoration: none;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    .remember-group a:hover {
+      text-decoration: underline;
+    }
+
+    .btns button {
+      padding: 12px;
+      width: 100%;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: #334155;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #FFFFFF;
+      transition: background-color 0.2s;
+    }
+
+    .btns button:hover {
+      background-color: #1e293b;
+    }
+
+    .alt {
+      color: #64748B;
+      font-size: 0.9rem;
+    }
+
+    .alt p {
+      text-align: center;
+    }
+
+    .alt a {
+      text-decoration: none;
+      margin-left: 4px;
+      color: #334155;
+      font-weight: 600;
+    }
+
+    .alt a:hover {
+      text-decoration: underline;
+    }
+
+
+    @media (min-width: 768px) {
+      .header h3 {
+        font-size: 1.75rem;
+      }
+
+      .container {
+        flex-direction: row;
+        min-height: 550px;
+      }
+
+      .imgs, .elements {
+        width: 50%;
+      }
+
+      .content {
+        bottom: 40px;
+        left: 35px;
+        right: 35px;
+      }
+
+      .elements {
+        padding: 40px 40px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h3>📚 Library Management System</h3>
+  </div>
+
+  <div class="main-wrapper">
+    <div class="container">
+      <div class="imgs">
+        <img src="Embrace Serenity_ Minor Blue Paint Redefines Library Aesthetics for 2024.jpg" alt="library">
+        <div class="content">
+          <h3>Sign Up</h3>
+          <p>Create an account to join the E-Library Management System and start exploring thousands of books and resources</p>
+        </div>
+      </div>
+
+      <form action="" class="elements">
+        <div class="inputs">
+          <label for="fullname">Full Name</label>
+          <input type="text" id="fullname" placeholder="Dev Admin">
+        </div>
+
+        <div class="inputs">
+          <label for="username">Username</label>
+          <input type="text" id="username" placeholder="admin">
+        </div>
+
+        <div class="inputs">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" placeholder="example@gmail.com">
+        </div>
+
+        <div class="inputs">
+          <label for="password">Password</label>
+          <input type="password" id="password">
+        </div>
+
+        <div class="inputs">
+          <label for="confirm-password">Confirm Password</label>
+          <input type="password" id="confirm-password">
+        </div>
+
+        <div class="checks">
+          <div class="box">     
+            <div class="remember-group">
+              <input type="checkbox" id="terms" required>
+              <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+            </div>
+          </div>
+        </div>
+
+        <div class="btns">
+          <button type="submit">Create Account</button>
+        </div>
+
+        <div class="alt">
+          <p>Already have an account? <a href="#">Login</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

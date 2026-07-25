@@ -1,0 +1,185 @@
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: sans-serif, Arial, Helvetica, sans-serif;
+  }
+
+  body {
+    background-color: #F4F6F8;
+    padding-bottom: 2rem;
+  }
+
+  .header {
+    padding: 20px 15px;
+    background-color: #ffffff;
+    margin-bottom: 10px;
+  }
+
+  .header h3 {
+    text-align: center;
+    color: #2B2D42;
+    font-size: 1.5rem;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    background-color: #f9f6f6;
+  }
+
+  .imgs {
+    position: relative;
+    width: 100%;
+    min-height: 220px;
+  }
+
+  .imgs img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .imgs::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+  }
+
+  .content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: #ffffff;
+    z-index: 2;
+  }
+
+  .content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+
+  .content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    opacity: 0.9;
+  }
+
+  .elements {
+    padding: 25px 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .inputs label {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 6px;
+    color: #2B2D42;
+  }
+
+  .inputs input {
+    padding: 12px;
+    width: 100%; 
+    background: transparent;
+    outline: none;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+
+  .box {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    font-size: 0.9rem;
+  }
+
+  .box label {
+    margin-left: 4px;
+  }
+
+  .checks a {
+    text-decoration: none;
+    color: #334155;
+    font-weight: 500;
+  }
+
+  .btns button {
+    padding: 14px;
+    width: 100%; /* Adapts to container width */
+    font-size: 1rem;
+    background-color: #334155;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: #FFFFFF;
+  }
+
+  .alt {
+    color: #222222;
+    font-size: 0.9rem;
+  }
+
+  .alt p {
+    text-align: center;
+  }
+
+  .alt a {
+    text-decoration: none;
+    margin-left: 6px;
+    color: #334155;
+    font-weight: 600;
+  }
+
+  /* Desktop View Adjustment */
+  @media (min-width: 768px) {
+    .header h3 {
+      font-size: 2rem;
+    }
+
+    .container {
+      flex-direction: row; /* Returns to side-by-side layout on larger screens */
+    }
+
+    .imgs, .elements {
+      width: 50%;
+    }
+
+    .imgs {
+      min-height: 450px;
+    }
+
+    .content {
+      bottom: 40px;
+      left: 30px;
+      right: 30px;
+    }
+
+    .content h3 {
+      font-size: 2rem;
+    }
+
+    .content p {
+      font-size: 1rem;
+    }
+
+    .elements {
+      padding: 40px;
+      gap: 25px;
+    }
+  }
