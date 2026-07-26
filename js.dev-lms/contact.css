@@ -183,68 +183,122 @@ body{
   margin-top: 6px;
   font-size: 0.85rem;
 }
-.features {
-  padding: 80px 0;
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .nav-links {
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .auth-buttons {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 50px 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .quote-banner {
+    font-size: 0.88rem;
+    padding: 8px 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-buttons {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .auth-buttons .btn {
+    width: 100%;
+  }
+}
+.features{
+  border: 1px solid #efefef;
+  padding: 30px 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   display: flex;
   justify-content: center;
+  margin: 30px auto;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1500px;
 }
-.container h4 {
-  font-size: 1.2rem;
-  color: #1e293b;
-  margin-bottom: 10px;
+.container{
+  padding: 20px;
+  width: 100%;
+}
+.container h3{
   text-align: center;
+  font-size: 1.3rem;
 }
 .inputs{
-display: flex;
-flex-direction: column;
-/* max-width: 1200px; */
-width: 500px;
-gap: 8px;
-
+  display: flex;
+  flex-direction: column;
 }
-.inputs input{
-  padding: 10px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid #ccc;
+.inputs input, textarea{
   background: transparent;
-  transition: all 0.3s ease;
+  border: 1px solid #ccc;
+  outline: none;
+  padding: 12px;
+  border-radius: 5px;
+  margin: 8px 0;
+  transition: 0.3s ease;
+  overflow: hidden;
 }
 .inputs label{
-  display: block;
   font-size: 1rem;
-  margin-top: 15px;
+  color: #656565;
 }
-.inputs textarea{
-  outline: none;
-  background: transparent;
-  padding: 8px;
-  font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  transition: all 0.3s ease;
-
+.inputs input:focus, textarea:focus{
+  border: 1px solid #001ecb;
+  transition: 0.3s ease;
 }
 .inputs button{
-  width: 50%;
-  padding: 10px;
-  margin: 15px auto;
-  border-radius: 5px;
   border: none;
+  padding: 10px;
+  border-radius: 8px;
   background-color: #0026ff;
-  color: white;
-  font-size: 1rem;
-  padding: 8px 18px;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  transition: all 0.3s ease;
-  cursor: pointer;
+  color: #fff;
+  margin: 5px 0;
+  font-size: 1.1.7rem;
+  transition: 0.3s ease;
 }
+.inputs button:hover{
+  background-color: #001ecb;
+}
+
 
 
 

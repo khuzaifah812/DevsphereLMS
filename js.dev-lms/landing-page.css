@@ -393,7 +393,18 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 24px;
 }
+.role{
+  font-weight: 600;
+  color: #0026ff;
+  text-transform: capitalize;
 
+}
+.bio{
+  text-wrap: inherit; 
+  line-height: 1.5;
+  color: #4b5563;
+
+}
 .team-card {
   background: #ffffff;
   padding: 24px;
@@ -403,6 +414,7 @@ body {
 }
 .team-card h3{
   text-transform: uppercase;
+  color: #1e293b;
 }
 .footer{
   margin-top: 40px;
