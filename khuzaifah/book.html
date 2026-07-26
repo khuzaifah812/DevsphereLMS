@@ -22,13 +22,13 @@ body{
 /* LEFT SIDEBAR */
 .sidebar {
     width: 250px;
-    background: #1e293b; /* dark blue */
+    background: hsl(217, 83%, 32%); /* dark blue */
     min-height: 100vh;
     position: fixed;
     left: 0;
     top: 0;
     padding: 20px 0;
-    box-shadow: 2px 0 8px rgba(0,0,0,.1);
+    box-shadow: 2px 0 8px rgba(19, 3, 109, 0.1);
 }
 
 .sidebar-logo {
@@ -245,16 +245,17 @@ label { display: block; margin-bottom: 6px; font-weight: 500; }
    
   <div class="sidebar-logo">📚 DevSphere</div>
   <ul class="sidebar-menu">
-    <li><a href="#" class="active">📊 Dashboard</a></li>
-    <li><a href="#">📖 Book Management</a></li>
+    <li><a href="dashboard.html" >📊 Dashboard</a></li>
+    <li><a href="#"class="active">📖 Book Management</a></li>
     <li><a href="#">📂 Category</a></li>
-    <li><a href="#">✍️ Author</a></li>
-    <li><a href="#">🏢 Publisher</a></li>
+
     <li><a href="#">👨‍🎓 Student</a></li>
     <li><a href="#">📤 Borrow Book</a></li>
     <li><a href="#">📥 Return Book</a></li>
     <li><a href="reports.html">📈 Reports</a></li>
     <li><a href="#">⚙️ Settings</a></li>
+        
+    <li><a href="login.html">🏢 Log-Out</a></li>
   </ul>
 </div>
 
@@ -321,6 +322,7 @@ label { display: block; margin-bottom: 6px; font-weight: 500; }
     </div>
   </div>
 </div>
+
 
 <!-- Modal -->
 <div class="modal" id="bookModal">
