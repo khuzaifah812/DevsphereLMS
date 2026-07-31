@@ -58,27 +58,26 @@
       <h3><i class="fa-solid fa-phone"></i>   Get in Touch</h3>
       <div class="inputs">
         <label for="username">Username</label>
-        <input type="text" id="username" placeholder="Dev Admin">
+        <input type="text" id="username" placeholder="Dev Admin" class="js-user" required>
       </div>
 
       <div class="inputs">
         <label for="student-id">Student ID Number</label>
-        <input type="text" id="student-id" placeholder="1646">
+        <input type="text" id="student-id" placeholder="1646" class="js-user-id" required>
       </div>
 
       <div class="inputs">
         <label for="email">Email</label>
-        <input type="email" id="email" placeholder="example@gmail.com">
+        <input type="email" id="email" placeholder="example@gmail.com" class="js-user-email" required>
       </div>
 
       <div class="inputs">
-        <label for="email">Comment</label>
-        <textarea name="comments" id="comments" rows="5" cols="50"></textarea>
+        <label for="comments">Comment</label>
+        <textarea name="comments" id="comments" rows="5" cols="50" class="js-user-comment" onkeydown="holdKey(event)" required></textarea>
       </div>
 
       <div class="inputs">
-        
-        <button type="submit"><i class="fa-solid fa-paper-plane"></i>  Submit</button>
+        <button type="submit" onclick="displayData()"><i class="fa-solid fa-paper-plane"></i>  Submit</button>
       </div>
       </div>
     </div>
@@ -90,5 +89,6 @@
       <p class="tagline">"Slowly we shall be recognised."</p>
     </div>
   </footer>
+  <script src="contact-us.js"></script>
 </body>
 </html>
