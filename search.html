@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        *{
+             box-sizing: border-box;
+            background-color: rgb(228, 215, 199);
+            
+        }
+        body{
+            margin: 0;
+            min-height: 100vh;
+            height: 100vh;
+            font-family: Arial, Helvetica, sans-serif, sans-serif;
+            font-size: 20px;
+            text-align: center;
+            align-items: center;
+        }
+        page{
+            max-width:1000px ;
+            margin: 0 auto;
+            padding:50px 24px 80px ;
+        }
+        .search-panel{ 
+            border-radius: 5px;
+            background-color: rgb(202, 86, 183);
+            padding: 26px;
+            height: 30px;
+        }
+        .search-row{
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .search-field{
+            flex:1 1 1 ;
+            
+
+            
+        }
+        input{
+            width:260px;
+            font-size: 15px;
+            border: 1px solid black;
+            height: 45px;
+            padding:12px 22px ;
+            border:1px solid black ;
+            font-size: 15px;
+            margin-left: 10px;
+        } 
+        select{
+            padding:12px 22px ;
+            border:1px solid black ;
+            font-size: 15px;
+            background-color: rgb(105, 105, 240);
+        }
+        button.search-btn{
+            cursor: pointer;
+            border-radius: 3px;
+            background-color: rgb(65, 32, 32);
+            border: none;
+            padding: 12px 22px;
+        }
+        button.search-btn:hover{
+          background-color: rgb(94, 59, 34);
+        }
+        .results{
+          display: grid;
+          gap: 14px;
+          margin-top: 26px ;
+          grid-template-columns:repeat(auto-fill,minmax(270px,1fr)) ;
+        }
+        .Book-card{
+          background-color: rgb(85, 136, 119);
+          border: 1px solid black;
+          border-radius: 3px;
+          padding: 16px 18px;
+          gap: 4px;
+        }
+        .Book-ID{
+          margin-bottom: 6px;
+          color: red;
+
+        }
+        .book-title{
+          font-weight: bold;
+          font-size: 20px;
+          margin-bottom: 4px;
+        }
+        .Book-Author{
+          margin-bottom: 12px;
+          font-style: italic;
+          font-size: 16px;
+        }
+        .meta-row{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        .genre-class{
+          text-transform: uppercase;
+          background-color: white;
+          border-radius: 2px;
+          font-size: 11px;
+          padding: 4px 9px;
+        }
+        .status-available{
+          font-weight: bold;
+          font-size: 12px;
+          background-color: rgb(57, 150, 57);
+          border: 1px solid black;
+        }
+        
+    </style>
+</head>
+<body>
+    <section class="Search-panel">
+        <div class="search-row">
+            <div class="search-field">
+                <input type="text" id="searchInput" placeholder="Search by title,Author or BookID " >
+            </div>
+            <select id="genreFilter" >
+                <option value="all" >All genres</option>
+                <option value="coding" >Coding</option>
+                <option value="architecture">Architecture</option>
+                <option value="webdevelopment"  >Web Development</option>
+            </select>
+            <button class="Search-btn" id="searchBtn">Search</button>
+        </div>
+    </section>
+    <Section class="results">
+        <div class="Book-card" data-genre="Coding">
+          <div class="book-title">Fundamentals of Coding</div>
+          <div class="Book-Author">Aidah Ruth</div>
+          <div class="Book-ID">B024</div>
+          <div class="meta-row">
+            <span class="genre-class">Coding</span>
+            <span class="status-available">Available</span>
+          </div>
+        </div>
+        <div class="Book-card" data-genre="webdevelopment">
+          <div class="book-title">Web Development basics</div>
+          <div class="Book-Author">JB Owens</div>
+          <div class="Book-ID">B104</div>
+
+          <div class="meta-row">
+            <span class="genre-class">Web development</span>
+            <span class="status-available">Borrowed</span>
+          </div>
+        </div>
+        <div class="Book-card" data-genre="architecture">
+          <div class="book-title">Architectural Design</div>
+          <div class="Book-Author"> AM Khuzaifah</div>
+          <div class="Book-ID">B039</div>
+          <div class="meta-row">
+            <span class="genre-class">Architecture</span>
+            <span class="status-available">Available</span>
+          </div>
+        </div>
+        <div class="Book-card" data-genre="coding">
+          <div class="book-title">Complete Coding</div>
+          <div class="Book-Author">JS Jordan</div>
+          <div class="Book-ID">B201</div>
+          <div class="meta-row">
+            <span class="genre-class">Coding</span>
+            <span class="status-available">Available</span>
+          </div>
+        </div>
+        <div class="Book-card" data-genre="coding">
+          <div class="book-title">Javascript</div>
+          <div class="Book-Author">NA Grace</div>
+          <div class="Book-ID">B010</div>
+          <div class="meta-row">
+            <span class="genre-class">Coding</span>
+            <span class="status-available">Available</span>
+          </div>
+        </div>
+        <div class="Book-card" data-genre="coding">
+          <div class="book-title">HTML</div>
+          <div class="Book-Author">MM Mark</div>
+          <div class="Book-ID">B029</div>
+          <div class="meta-row">
+            <span class="genre-class">Coding</span>
+            <span class="status-available">Borrowed</span>
+          </div>
+        </div>
+        <p id="noResults" style="display:none;">No books match your search</p>
+    </Section>
+        <script>
+          const searchInput = document.getElementById('searchInput');
+          const genreFilter = document.getElementById('genreFilter');
+          const searchBtn = document.getElementById('searchBtn');
+          const noResults = document.getElementById('noResults');
+          const bookCards = document.querySelectorAll('.Book-card');
+
+          function filterBooks() {
+            const query = searchInput.value.trim().toLowerCase();
+            const genre = genreFilter.value;
+            let visibleCount = 0;
+
+            bookCards.forEach(card => {
+              // Read the text out of each field inside this specific card
+              const title = card.querySelector('.book-title').textContent.toLowerCase();
+              const author = card.querySelector('.Book-Author').textContent.toLowerCase();
+              const bookId = card.querySelector('.Book-ID').textContent.toLowerCase();
+              const cardGenre = card.dataset.genre;
+
+              const matchesQuery =
+                title.includes(query) ||
+                author.includes(query) ||
+                bookId.includes(query);
+
+              const matchesGenre = genre === 'all' || cardGenre === genre;
+
+              if (matchesQuery && matchesGenre) {
+                card.style.display = '';
+                visibleCount++;
+              } else {
+                card.style.display = 'none';
+              }
+            });
+
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+          }
+
+          searchInput.addEventListener('input', filterBooks);
+          genreFilter.addEventListener('change', filterBooks);
+          searchBtn.addEventListener('click', filterBooks);
+        </script>
+            
+</body>
+</html>
